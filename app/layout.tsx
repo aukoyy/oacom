@@ -18,25 +18,41 @@ export const metadata: Metadata = {
   description: "Øyvinds portfolio site",
 };
 
-const Nav = () => {
+type NavItem = { label: string; href: string };
+
+const navItems: NavItem[] = [
+  { label: 'Projects', href: '/projects'},
+  { label: 'Github', href: 'https://github.com/aukoyy' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/oyvindaukner/' },
+  { label: 'Youtube', href: 'https://www.youtube.com/@AukOps' },
+  { label: 'About', href: '/about' },
+];
+
+const NavLink = ({ item }: { item: NavItem }) => {
+  const isExternal = item.href.includes('https://');
   return (
-    <nav className="flex flex-col md:flex-row md:justify-around items-center">
-      <span><a href="/"><Image src="/logo-portfolio.png" alt="" width={220} height={220} priority className="" /></a></span>
-      <ul className="flex space-x-16 text-2xl">
-        <li>
-          <a href="/about">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="/contact">
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
-  )
+    <li className="hover:text-sky-800">
+      <a
+        href={item.href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+      >
+        {item.label}
+      </a>
+    </li>
+  );
 }
+
+const Nav = () => (
+  <nav className="flex flex-col md:flex-row md:justify-around items-center">
+    <span>
+      <a href="/"><Image src="/logo-portfolio.png" alt="" width={220} height={220} priority /></a>
+    </span>
+    <ul className="md:flex md:items-center space-x-8 text-xl">
+      {navItems.map(item => <NavLink key={item.href + item.label} item={item} />)}
+    </ul>
+  </nav>
+);
 
 export default function RootLayout({
   children,

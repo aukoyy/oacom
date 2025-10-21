@@ -14,7 +14,7 @@ export default function Home() {
           />
           <div>
             <h1 className='text-4xl'>Hello!</h1>
-            <p className="text-lg">I am <a href="/about" className="text-sky-600 hover:text-sky-800">Øyvind</a>, <br />a Solutions Architect<br />based in Oslo.</p>
+            <p className="text-lg">I am <a href="/about" className="font-semibold text-sky-600 hover:text-sky-800">Øyvind</a>, <br />a Solutions Architect<br />soon to be based<br />in Australia.</p>
           </div>
         </div>
         <h2 className="text-3xl mt-24 text-gray-600">Writings</h2>

@@ -10,7 +10,7 @@
     ],
     "description": "As part of the AWS Platform Team at Fremtind AS, I manage and develop AWS services to support the organization's cloud infrastructure. My work involves leveraging Infrastructure as Code (IaC) with AWS CDK and TypeScript to streamline deployments and ensure scalable, efficient solutions across the organization.",
     "organization": "Fremtind AS",
-    "img_url": "/assets/companies/fremtind.svg"
+    "img_url": "/companies/fremtind.svg"
   },
   {
     "title": "Transport Documentation (TDoc)",
@@ -26,7 +26,7 @@
     ],
     "description": "Tasked with salvaging and launching TDoc, a timekeeping system for commercial truck drivers compliant with Norwegian Road Administration requirements. The project had faced significant challenges, including being outsourced to an Indian consultancy that went bankrupt in late 2023. As a frontend developer, I improved and corrected two React codebases, ensuring usability and functionality. Additionally, I collaborated on backend development in C#, refining its RESTful JSON-based client-server communication.",
     "organization": "Cargotron AS",
-    "img_url": "/assets/projects/tdoc.png"
+    "img_url": "/projects/tdoc.png"
   },
   {
     "title": "Internal KPI-Dashboards",
@@ -45,7 +45,7 @@
     ],
     "description": "I developed the project end-to-end, leveraging Architect with AWS Lambda, SNS, SQS, and DynamoDB as the cloud solution to align with Fleks' existing stack. With design input from a designer, I handled all aspects of the cloud, backend, and frontend implementation. Key tasks included setting up cloud infrastructure, developing backend services, and creating frontend solutions in React.",
     "organization": "Fleks AS",
-    "img_url": "/assets/projects/kpi1.png"
+    "img_url": "/projects/kpi1.png"
   },
   {
     "title": "Charging Chip Integration",
@@ -59,7 +59,7 @@
     ],
     "description": "Developed functionality to manage charger chip integration in the car delivery flow for Fleks. This involved enhancing the operational app used by staff to deliver and receive cars by adding a new step to the existing workflow. I created a script to generate and print QR codes, which were attached to the chips.",
     "organization": "Fleks AS",
-    "img_url": "/assets/projects/qr.png"
+    "img_url": "/projects/qr.png"
   },
   {
     "title": "New Store Page",
@@ -107,7 +107,7 @@
     ],
     "description": "Modernized the tech stack through a lift-and-shift approach to enable future upgrades. We developed a comprehensive portal and around 15 apps to support real-time production and post-analysis of fertilizer manufacturing.",
     "organization": "Yara ASA",
-    "img_url": "/assets/projects/yara.png"
+    "img_url": "/projects/yara.png"
   },
   {
     "title": "EV Charging Solution",
@@ -123,7 +123,7 @@
     ],
     "description": "Implemented an EV charging solution for APCOA Norway, integrating charging controls into the APCOA Flow app. Using TypeScript, Express, REST, PostgreSQL, Sequelize, and Jenkins, I streamlined parking and charging processes to deliver a seamless and unified user experience.",
     "organization": "APCOA Norway AS",
-    "img_url": "/assets/projects/apcoa.jpg"
+    "img_url": "/projects/apcoa.jpg"
   },
   {
     "title": "Homepage and CV Portal",
