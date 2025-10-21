@@ -4,9 +4,21 @@ frontend:
     preBuild:
       commands:
         - corepack enable || true
-        - node -v
-        - npm -v
-        - npm ci
+        - |
+          if [ -f .nvmrc ]; then
+            echo "Using Node version from .nvmrc";
+            # Install nvm (lightweight) if not present
+            export NVM_DIR="/root/.nvm"; mkdir -p "$NVM_DIR"; \
+              curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash >/dev/null 2>&1; \
+              . "$NVM_DIR/nvm.sh"; \
+              nvm install $(cat .nvmrc); \
+              nvm use $(cat .nvmrc); \
+              node -v; npm -v; \
+              which node; which npm; \
+              hash -r;
+          fi
+        - echo "Running npm ci (attempt 1)"
+        - npm ci || (echo "Retry after clean cache" && npm cache clean --force && echo "Attempt 2" && npm ci)
     build:
       commands:
         - npm run build
