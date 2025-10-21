@@ -19,5 +19,6 @@
     "@types/react-dom": "^19",
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4"
-  }
+  },
+  "engines": { "node": ">=18.17.0 <=22" }
 }
