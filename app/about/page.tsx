@@ -8,7 +8,7 @@ export default function About() {
         <div className="flex flex-col lg:flex-row-reverse">
           <div className="relative w-full h-[400px] mb-8 lg:w-[750px] lg:h-[750px] lg:mb-0 lg:ml-32">
             <Image
-              src="/oyvind-profile.jpeg"
+              src="/profile-me-24-min.jpg"
               alt="About Me"
               fill
               className="rounded-lg shadow-lg object-cover"

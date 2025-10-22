@@ -3,15 +3,19 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-type NavItem = { label: string; href: string };
+export type NavItem = { label: string; href: string };
 
-const navItems: NavItem[] = [
-  { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects'},
-  { label: 'Links', href: '/links'},
-];
+interface NavLinkProps {
+  item: NavItem;
+  currentPath: string;
+}
 
-const NavLink = ({ item, currentPath }: { item: NavItem; currentPath: string }) => {
+interface NavProps {
+  navItems: NavItem[];
+}
+
+const NavLink = (props: NavLinkProps) => {
+  const { item, currentPath } = props;
   const isExternal = item.href.includes('https://');
   const isCurrentPage = item.href === currentPath || (item.href !== '/' && currentPath.startsWith(item.href));
   return (
@@ -27,9 +31,12 @@ const NavLink = ({ item, currentPath }: { item: NavItem; currentPath: string }) 
   );
 }
 
-export default function Nav() {
+
+//export default function Nav({ navItems }: { navItems: NavItem[] }) {
+export default function Nav(props: NavProps) {
+  const { navItems } = props;
   const pathname = usePathname();
-  
+
   return (
     <nav className="flex flex-col md:flex-row md:justify-around items-center">
       <span>

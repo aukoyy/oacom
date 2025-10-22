@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex justify-center my-24 px-4">
+    <div className="flex justify-center md:my-24 my-8 px-4">
       <main className="max-w-7xl">
-        <div className="flex space-x-8 justify-center items-center">
+        <div className="flex space-x-[-35px] md:space-x-2 justify-center items-center">
           <Image
             src="/notion-avatar.svg"
             alt="Avatar of Øyvind"
-            width={180}
-            height={38}
+            width={230}
+            height={138}
             priority
           />
           <div>
