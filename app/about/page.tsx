@@ -24,9 +24,6 @@ export default function About() {
 
             <section className="mt-12 space-y-8">
               <div>
-                <h2 className="text-2xl font-semibold mb-2">Contact</h2>
-                <p>Let's connect on <a href="https://www.linkedin.com/in/oyvindaukner/" target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:text-sky-800">LinkedIn</a></p>
-                <p>Or e-mail: <span className="text-sky-600">oyvind.auk@gmail.com</span></p>
               </div>
               <div>
                 <h2 className="text-2xl font-semibold mb-2">Education</h2>
@@ -39,8 +36,8 @@ export default function About() {
                 <p>Company <br /><span className="text-gray-500">2022 - 2023</span></p>
               </div>
               <div>
-                <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-                <p>Microsoft Office<br />Figma<br />Figjam<br />Canva<br />Google Sheets<br />Lightroom</p>
+                <h2 className="text-2xl font-semibold mb-2">Certifications</h2>
+                AWS
               </div>
             </section>
           </div>
