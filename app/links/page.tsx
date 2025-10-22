@@ -47,7 +47,7 @@ export default function Links() {
             <div className="space-y-4 text-lg mt-8">
               <LinkEntry
                 icon={<GithubIcon className="text-white w-8" />}
-                label="aukoyy"
+                label="GitHub"
                 href="https://github.com/aukoyy"
                 external
               />
