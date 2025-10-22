@@ -39,8 +39,8 @@ function LinkEntry({ icon, label, href, className, external }: LinkEntryProps) {
 
 export default function Links() {
   return (
-    <div className="flex justify-center mt-18">
-      <main className="max-w-7xl">
+    <div className="">
+      <main className="">
         <div className="flex space-x-8 items-center">
           <div>
             <h1 className="text-4xl text-slate-700">All my links</h1>

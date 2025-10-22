@@ -29,10 +29,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased pb-24`}
       >
         <Nav navItems={navItems} />
-        {children}
+        <div className="flex justify-center">
+          <div className="max-w-7xl mt-18 px-4 lg:px-24">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

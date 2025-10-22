@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex justify-center md:my-18 my-8 px-4">
-      <main className="max-w-7xl">
+    <div className="">
+      <main className="">
         <div className="flex space-x-[-35px] md:space-x-2 justify-center items-center">
           <Image
             src="/notion-avatar.svg"
