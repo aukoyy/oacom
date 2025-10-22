@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="flex justify-center">
-      <main className="max-w-7xl mt-12 mb-96 px-4 lg:px-24">
+      <main className="max-w-7xl mt-18 mb-96 px-4 lg:px-24">
         <h1 className="text-4xl font-bold my-12">About</h1>
         <div className="flex flex-col lg:flex-row-reverse">
           <div className="relative w-full h-[400px] mb-8 lg:w-[750px] lg:h-[750px] lg:mb-0 lg:ml-32">
