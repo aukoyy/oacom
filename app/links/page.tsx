@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import classNames from "classnames";
 import {
@@ -5,7 +7,8 @@ import {
   ExternalLink,
   EmailIcon,
   GithubIcon,
-  YoutubeIcon
+  YoutubeIcon,
+  ClipboardIcon
 } from "../components/icons";
 
 interface LinkEntryProps {
@@ -14,23 +17,45 @@ interface LinkEntryProps {
   href?: string;
   className?: string;
   external?: boolean;
+  clipboard?: boolean;
 }
 
-function LinkEntry({ icon, label, href, className, external }: LinkEntryProps) {
+function LinkEntry({ icon, label, href, className, external, clipboard }: LinkEntryProps) {
+  const handleClipboardClick = async () => {
+    if (clipboard) {
+      try {
+        await navigator.clipboard.writeText(label);
+        // You could add a toast notification here if you want
+        console.log('Copied to clipboard:', label);
+      } catch (err) {
+        console.error('Failed to copy to clipboard:', err);
+      }
+    }
+  };
+
   return (
     <div className={classNames("flex space-x-4 items-center", className)}>
       <div className="p-2 bg-slate-800 rounded-full">
         {icon}
       </div>
-      <div className={classNames("flex space-x-1", external ? "link" : "text-sky-500")}>
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classNames("text-lg font-semibold", external ? "cursor-pointer" : "cursor-text")}
-        >
-          {label}
-        </a>
+      <div className={classNames("flex space-x-1", external ? "link" : clipboard ? "cursor-pointer text-sky-500 hover:text-sky-400" : "text-sky-500")}>
+        {clipboard ? (
+          <button
+            onClick={handleClipboardClick}
+            className={classNames("text-lg font-semibold text-left cursor-pointer flex space-x-1")}
+          >
+            <p>{label}</p><ClipboardIcon />
+          </button>
+        ) : (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classNames("text-lg font-semibold")}
+          >
+            {label}
+          </a>
+        )}
         {external && <ExternalLink />}
       </div>
     </div>
@@ -66,6 +91,7 @@ export default function Links() {
               <LinkEntry
                 icon={<EmailIcon className="text-white w-8" />}
                 label="oyvind.auk@gmail.com"
+                clipboard
               />
             </div>
           </div>
