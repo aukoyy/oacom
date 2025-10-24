@@ -17,7 +17,7 @@ export default function Home() {
             <p className="text-lg">I am <a href="/about" className="link">Øyvind</a>, <br />a Solutions Architect<br />soon to be based<br />in Australia.</p>
           </div>
         </div>
-        <h2 className="text-3xl mt-24 text-gray-600">Writings</h2>
+        <h2 className="text-3xl mt-24 text-gray-600">Posts</h2>
         <section>
         </section>
       </main>
