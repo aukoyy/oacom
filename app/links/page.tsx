@@ -1,13 +1,14 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import {
   LinkedInIcon,
   ExternalLink,
   EmailIcon,
   GithubIcon,
   YoutubeIcon,
-  ClipboardIcon
+  ClipboardIcon,
+  PhoneIcon
 } from "../components/icons";
 
 interface LinkEntryProps {
@@ -36,7 +37,7 @@ function ExternalLinkEntry({ icon, label, href }: LinkEntryProps) {
   );
 }
 
-function ClipBoardEntry({ icon, label }: { icon: ReactNode, label: string }) {
+function ClipboardEntry({ icon, label }: { icon: ReactNode, label: string }) {
   const handleClipboardClick = async () => {
     // todo: You could add a toast notification here if you want
     navigator.clipboard.writeText(label);
@@ -48,24 +49,30 @@ function ClipBoardEntry({ icon, label }: { icon: ReactNode, label: string }) {
       </div>
       <button onClick={handleClipboardClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
         <p>{label}</p><ClipboardIcon />
-      </button>        
+      </button>
     </div>
   );
 }
 
 function PhoneNumberEntry({ icon, label }: { icon: ReactNode, label: string }) {
-  const handlePhoneNumberClick = async () => {
-    // todo: Make it open a modal so it's not so visible
-    navigator.clipboard.writeText(label);
+  const [revealed, setRevealed] = useState(false);
+  const handlePhoneNumberClick = () => {
+    navigator.clipboard.writeText(label.replace(/\s/g, ''));
   };
   return (
     <div className="flex space-x-4 items-center">
       <div className="p-2 bg-slate-800 rounded-full">
         {icon}
       </div>
-      <button onClick={handlePhoneNumberClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
-        <p>{label}</p><ClipboardIcon />
-      </button>        
+      {revealed ? (
+        <button onClick={handlePhoneNumberClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+          <p>{label}</p><ClipboardIcon />
+        </button>
+      ) : (
+        <button onClick={() => setRevealed(true)} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+          <p>Reveal</p>
+        </button>
+      )}
     </div>
   );
 }
@@ -97,9 +104,13 @@ export default function Links() {
                 label="Youtube"
                 href="https://www.youtube.com/@AukOps"
               />
-              <ClipBoardEntry
+              <ClipboardEntry
                 icon={<EmailIcon className="text-white w-8" />}
                 label="oyvind.auk@gmail.com"
+              />
+              <PhoneNumberEntry
+                icon={<PhoneIcon className="text-white w-8" />}
+                label="+47 950 96 996"
               />
             </div>
           </div>
