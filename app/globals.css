@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @layer components {
   .link {
@@ -11,4 +12,3 @@
     @apply hover:text-sky-700;
   }
 }
-

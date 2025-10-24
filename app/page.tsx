@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { getAllPosts } from '@/lib/mdx';
 
 export default function Home() {
+  const posts = getAllPosts();
+
+  console.log('All posts:', posts);
+
   return (
     <div className="">
       <main className="">
@@ -18,8 +23,21 @@ export default function Home() {
           </div>
         </div>
         <h2 className="text-3xl mt-24 text-gray-600">Posts</h2>
-        <section>
-        </section>
+        <div className="space-y-6 mt-6">
+          {true && posts.map((post) => (
+            <article key={post.slug} className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold">
+                <a href={`/posts/${post.slug}`} className="hover:text-blue-600 transition-colors">
+                  {post.title}
+                </a>
+              </h3>
+              <p className="text-sm text-gray-500">Published: {post.date}</p>
+              {post.excerpt && (
+                <p className="text-gray-600 mt-2">{post.excerpt}</p>
+              )}
+            </article>
+          ))}
+        </div>
       </main>
     </div>
   );
