@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode } from "react";
-import classNames from "classnames";
 import {
   LinkedInIcon,
   ExternalLink,
@@ -15,52 +14,65 @@ interface LinkEntryProps {
   icon: ReactNode;
   label: string;
   href?: string;
-  className?: string;
-  external?: boolean;
-  clipboard?: boolean;
 }
 
-function LinkEntry({ icon, label, href, className, external, clipboard }: LinkEntryProps) {
-  const handleClipboardClick = async () => {
-    if (clipboard) {
-      try {
-        await navigator.clipboard.writeText(label);
-        // You could add a toast notification here if you want
-        console.log('Copied to clipboard:', label);
-      } catch (err) {
-        console.error('Failed to copy to clipboard:', err);
-      }
-    }
-  };
-
+function ExternalLinkEntry({ icon, label, href }: LinkEntryProps) {
   return (
-    <div className={classNames("flex space-x-4 items-center", className)}>
+    <div className="flex space-x-4 items-center">
       <div className="p-2 bg-slate-800 rounded-full">
         {icon}
       </div>
-      <div className={classNames("flex space-x-1", external ? "link" : clipboard ? "cursor-pointer text-sky-500 hover:text-sky-400" : "text-sky-500")}>
-        {clipboard ? (
-          <button
-            onClick={handleClipboardClick}
-            className={classNames("text-lg font-semibold text-left cursor-pointer flex space-x-1")}
-          >
-            <p>{label}</p><ClipboardIcon />
-          </button>
-        ) : (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classNames("text-lg font-semibold")}
-          >
-            {label}
-          </a>
-        )}
-        {external && <ExternalLink />}
+      <div className="flex space-x-1 link">
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg font-semibold flex space-x-1"
+        >
+          <p>{label}</p><ExternalLink />
+        </a>
       </div>
     </div>
   );
 }
+
+function ClipBoardEntry({ icon, label }: { icon: ReactNode, label: string }) {
+  const handleClipboardClick = async () => {
+    // todo: You could add a toast notification here if you want
+    navigator.clipboard.writeText(label);
+  };
+  return (
+    <div className="flex space-x-4 items-center">
+      <div className="p-2 bg-slate-800 rounded-full">
+        {icon}
+      </div>
+      <button onClick={handleClipboardClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+        <p>{label}</p><ClipboardIcon />
+      </button>        
+    </div>
+  );
+}
+
+function PhoneNumberEntry({ icon, label }: { icon: ReactNode, label: string }) {
+  const handlePhoneNumberClick = async () => {
+    // todo: Make it open a modal so it's not so visible
+    navigator.clipboard.writeText(label);
+  };
+  return (
+    <div className="flex space-x-4 items-center">
+      <div className="p-2 bg-slate-800 rounded-full">
+        {icon}
+      </div>
+      <button onClick={handlePhoneNumberClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+        <p>{label}</p><ClipboardIcon />
+      </button>        
+    </div>
+  );
+}
+
+
+// PhoneNumberEntry with modal
+//   -> CvLinkEntry? external or generated?
 
 export default function Links() {
   return (
@@ -70,28 +82,24 @@ export default function Links() {
           <div>
             <h1 className="text-4xl text-slate-700">All my links</h1>
             <div className="space-y-4 text-lg mt-8">
-              <LinkEntry
+              <ExternalLinkEntry
                 icon={<GithubIcon className="text-white w-8" />}
                 label="GitHub"
                 href="https://github.com/aukoyy"
-                external
               />
-              <LinkEntry
+              <ExternalLinkEntry
                 icon={<LinkedInIcon className="text-white w-8" />}
                 label="LinkedIn"
                 href="https://www.linkedin.com/in/oyvindaukner/"
-                external
               />
-              <LinkEntry
+              <ExternalLinkEntry
                 icon={<YoutubeIcon className="text-white w-8" />}
                 label="Youtube"
                 href="https://www.youtube.com/@AukOps"
-                external
               />
-              <LinkEntry
+              <ClipBoardEntry
                 icon={<EmailIcon className="text-white w-8" />}
                 label="oyvind.auk@gmail.com"
-                clipboard
               />
             </div>
           </div>
