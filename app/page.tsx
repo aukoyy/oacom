@@ -23,12 +23,12 @@ export default function Home() {
             <p className="text-lg">I am <a href="/about" className="link">Øyvind</a>, <br />a Solutions Architect<br />soon to be based<br />in Australia.</p>
           </div>
         </div>
-        <h2 className="text-3xl mt-24 text-gray-600">Posts</h2>
+        <h2 className="text-3xl mt-24 text-gray-500">Posts</h2>
         <div className="space-y-6 mt-6">
-          {true && publishedPosts.map((post) => (
+          {publishedPosts.map((post) => (
             <article key={post.slug} className="border-b border-gray-200 pb-6">
               <h3 className="text-xl font-bold">
-                <a href={`/posts/${post.slug}`} className="hover:text-blue-600 transition-colors">
+                <a href={`/posts/${post.slug}`} className="hover:text-sky-700 transition-colors">
                   {post.title}
                 </a>
               </h3>
