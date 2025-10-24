@@ -53,6 +53,23 @@ function ClipBoardEntry({ icon, label }: { icon: ReactNode, label: string }) {
   );
 }
 
+function PhoneNumberEntry({ icon, label }: { icon: ReactNode, label: string }) {
+  const handlePhoneNumberClick = async () => {
+    // todo: Make it open a modal so it's not so visible
+    navigator.clipboard.writeText(label);
+  };
+  return (
+    <div className="flex space-x-4 items-center">
+      <div className="p-2 bg-slate-800 rounded-full">
+        {icon}
+      </div>
+      <button onClick={handlePhoneNumberClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+        <p>{label}</p><ClipboardIcon />
+      </button>        
+    </div>
+  );
+}
+
 
 // PhoneNumberEntry with modal
 //   -> CvLinkEntry? external or generated?
