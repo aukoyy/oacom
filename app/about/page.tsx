@@ -40,7 +40,7 @@ export default function About() {
                 <h2 className="text-2xl font-light text-slate-700 my-2">Certifications</h2>
                 <ul className="list-disc list-inside space-y-1">
                   <li>AWS Certified Solutions Architect - Associate</li>
-                  <li>AWS Certified Developer – Associate</li>
+                  <li>AWS Certified Developer - Associate</li>
                   <li>AWS Certified Cloud Practitioner</li>
                 </ul>
               </div>
