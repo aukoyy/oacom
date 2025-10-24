@@ -8,6 +8,7 @@ export interface PostData {
   date: string;
   excerpt?: string;
   content: string;
+  publish?: boolean;
   [key: string]: any; // Allow additional frontmatter fields
 }
 

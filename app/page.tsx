@@ -5,6 +5,7 @@ export default function Home() {
   const posts = getAllPosts();
 
   console.log('All posts:', posts);
+  const publishedPosts = posts.filter(post => post.publish);
 
   return (
     <div className="">
@@ -24,7 +25,7 @@ export default function Home() {
         </div>
         <h2 className="text-3xl mt-24 text-gray-600">Posts</h2>
         <div className="space-y-6 mt-6">
-          {true && posts.map((post) => (
+          {true && publishedPosts.map((post) => (
             <article key={post.slug} className="border-b border-gray-200 pb-6">
               <h3 className="text-xl font-bold">
                 <a href={`/posts/${post.slug}`} className="hover:text-blue-600 transition-colors">
