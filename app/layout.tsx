@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav, { NavItem } from "./components/Nav";
+import classNames from "classnames";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,12 @@ const navItems: NavItem[] = [
 export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased pb-24`}>
+      <body
+        className={classNames(
+          geistSans.variable, geistMono.variable,
+          'antialiased pb-24',
+          // 'dark:bg-neutral-950'
+        )}>
         <Nav navItems={navItems} />
         <div className="flex justify-center">
           <div className="max-w-7xl mt-18 px-4 lg:px-24">

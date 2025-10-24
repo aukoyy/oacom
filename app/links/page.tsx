@@ -20,7 +20,7 @@ interface LinkEntryProps {
 function ExternalLinkEntry({ icon, label, href }: LinkEntryProps) {
   return (
     <div className="flex space-x-4 items-center">
-      <div className="p-2 bg-slate-800 rounded-full">
+      <div className="p-2 bg-slate-700 rounded-full">
         {icon}
       </div>
       <div className="flex space-x-1 link">
@@ -44,7 +44,7 @@ function ClipboardEntry({ icon, label }: { icon: ReactNode, label: string }) {
   };
   return (
     <div className="flex space-x-4 items-center">
-      <div className="p-2 bg-slate-800 rounded-full">
+      <div className="p-2 bg-slate-700 rounded-full">
         {icon}
       </div>
       <button onClick={handleClipboardClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
@@ -61,7 +61,7 @@ function PhoneNumberEntry({ icon, label }: { icon: ReactNode, label: string }) {
   };
   return (
     <div className="flex space-x-4 items-center">
-      <div className="p-2 bg-slate-800 rounded-full">
+      <div className="p-2 bg-slate-700 rounded-full">
         {icon}
       </div>
       {revealed ? (
