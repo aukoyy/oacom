@@ -1,0 +1,64 @@
+---
+title: "TailwindCSS: The next logical step?"
+slug: "tailwindcss-the-next-logical-step"
+imagePath: "/content/tailwindcss-the-next-logical-step/tailwind-logo.png"
+date: "2021-06-08"
+excerpt: "An intriguing document showcasing an image."
+publish: true
+---
+
+## Ingress
+TailwindCSS, often referred to simply as tailwind, is a utility-first CSS library for quickly building user interfaces with a high degree of self-control.
+
+## Usually...
+When creating a website, you traditionally use CSS / SASS or a front-end framework such as Bootstrap or Materialize. The advantage of coding yourself is control, while the disadvantages are low speed, many extra files and a lot of linking to class names in HTML. Frameworks, on the other hand, provide speed to experienced developers as well as expanded opportunities for developers with less time in the industry. The disadvantage is that knowledge accumulated about the new framework also becomes an isolated skill that is difficult to transfer back to CSS. Several of the frameworks often also have their own "look": If you have, for example, built a couple of pages with Bootstrap, you will quickly recognize this when you land on a new page - it is then said that this page is "Bootstrapped". This has developed into a look many want to avoid if it is a goal to stand out a little visually.
+
+## ..but now!
+In 2017, TailwindCSS was launched, and with it a new approach to structuring and dealing with styling of websites. Instead of classic front-end frameworks, tailwind is so-called utility-first. This refers to the fact that it mostly consists of a bunch of such helper classes, or utilities, that have been defined for everything you can think of. Be it width, color, shadow, margin or animations. They are designed to be comprehensive and at the same time narrowing and opinionated. Support is also built in to optimize the code by removing all help classes you do not need in the build step, thus keeping the size of the project in production under control by shipping only what you need.
+
+You get a subset of styling functionality that will work for all common needs. For example, color choices from 100 that are light, to 900 that is dark in steps of 100. In addition, everything can be overridden and expanded in a configuration file, so you can easily integrate the visual profile of your product. Note that the help classes are as minimalist as possible and provide only one function at a time. So it's a different way of thinking than, for example, frameworks that give you a neat finished styled button.
+
+Below is an example I borrowed from their own documentation. The first picture shows a traditional way of thinking, while the second shows how to achieve the same with tailwind. Note in particular that with tailwind you avoid the need to name and connect all the different levels of the interface. Both in the code and mentally of course. This is what I mean by back and forth linking.
+
+In the first picture we see an example of traditional thinking, while the second illustrates how you can achieve the same by using tailwind.
+
+![Image 1](/content/tailwindcss-the-next-logical-step/image1.png)
+![Image 2](/content/tailwindcss-the-next-logical-step/image2.png)
+
+## Challenges
+The only downside to tailwind that I see is that there is another (small) thing to learn, and that it requires a little bit of setup. In 2017, a new (for me) expression was popularized: "Javascript fatigue". And if you jump from trend to trend, there is an element of this in the CSS world as well.
+
+Tailwind is very easy to set up. That said, after 4-5 successful attempts, I have not managed it on the first try just by following the guide. There has always been a need for some tweaking to make it work. Fortunately, this seems to be getting better, and the last time was significantly easier than the first. So, maybe the next project goes on the first try! (edit: it did!)
+
+Beyond that, there are some objections and reactions that are common: Tailwind is reminiscent of inline styles, and can look very messy at first introduction. You may also think that it can eventually become challenging to maintain. Let's take a closer look at these claims. 
+
+## Buuut, isn't this just inline styles?
+A common objection when you first hear about tailwind is that "is this not just inline styles"? And frankly there is a lot of truth to this.
+
+But tailwinds helper classes offer some advantages over regular inline code. The classes are far more concise and again hit a sweet spot where it can be a bit more massive than regular class names, but still far better than what inline styles with regular CSS would be. The biggest benefits you get over regular CSS are a faster way to responsiveness and easy state management. You can very easily define different designs for the different breakpoints. You also get the ability to define your own functionality on hover and focus, ie state management.
+
+The motivation to use Tailwind instead of the more comprehensive frameworks is control and proximity to CSS. All developers, and perhaps especially front-end developers, are often faced with the choice of "what should I learn now". I have come across a philosophy that in many cases has provided clarity: when in doubt, focus on the most basic! I think this is one of the main arguments for tailwind versus frameworks like Bootstrap.
+
+Tailwind - in my opinion - exists in the goldilocks zone between getting powerful traction with CSS and having to learn yet another new framework. And as we know, a given framework can end up being more or less outdated in a few years. Tailwind allows you to have a more or less 1:1 ratio between your code and the CSS it represents. You will therefore continue to learn about basic CSS as you use the library more and more. 
+
+## Maintenance
+Okay, you've heard that tailwind is the new hot, fresh thing. You may have even taken the step and tried it out a bit and you think your page looks nifty and the code sexy. 
+
+But maintenance can`t possible be manageable? By the time every button and centered div is marked up, the code must be full of repetition and long inline stylings? This framework must absolutely be kept to hobby projects and hackatons where you have less time than sense - or what?
+
+Now I'm moving into unchartered territory. I myself have only used tailwind in smaller projects, but hear from others that it should be entirely possible - and even a joy - to scale up. One of the aces up your sleeve is the ability to pull out and group repetitive code. This can be done, for example, with a button or other elements that are standard in several places on the page. Here, however, it is important to resist the temptation to put too much into each variable. One of the cornerstones of tailwind is that each class should do as little as possible. Precisely this with upscaling and maybe even teams is something the I hope to test out in the time to come. I'm excited and have faith! 
+
+## Syntax - perhaps the next logical step
+When it comes to syntax, there are many subjective preferences. One of the objections you may get when you want to introduce tailwind is that it looks ugly or messy. This is entirely personal preference. Do you want a little more clutter and crochet code in your files, or do you want a more cluttered file system with more linking? After using tailwind for a while, I now think projects with .css or .sass files look messy, and would rather not have a single CSS file. It's probably mostly a matter of habit.
+
+I myself would dare to go so far as to suggest that tailwind represents a logical next step in the progress of the developer experience. Try to follow me in an example I like: React has now been on the throne for many years, and with React came JSX. JSX was different from what many were used to. Instead of having more or less separate HTML and Javascript, they introduced a way of thinking where they mixed markup and functionality in one and the same structure. Many people thought this was messy, ugly and unheard of. Since then, many have fallen in love with the new workflow and would never return. So with this in mind, what does tailwind represent in the bigger picture?
+
+When I zoom out, I see this way of thinking as the next logical step on this path. Whether it ends up being a version of CSS-In-JS, or TailwindCSS. We went from separating HTML, CSS and Javascript into separate files, to combining HTML and Javascript, while still separating the CSS. With tailwind, I finally feel that it is natural to write markup, functionality and styling in one and the same flow. Eureka!
+
+## Test for yourself!	
+If you are curious and want to test it out, I recommend taking a stylesheet link over to Codesandbox and give it a try. This is definitely the fastest way to get some grime under your nails and see it in action!
+
+The link can be found at the bottom of the tailwind installation guide under "Using Tailwind via CDN": https://tailwindcss.com/docs/installation. In Codesandbox you go to a project and find «External resources». Click expand and enter the link from tailwind (only the address, without HTML tags etc.) and click on «Add resource». You can now use tailwind!
+
+
+![Image 3](/content/tailwindcss-the-next-logical-step/image3.png)
