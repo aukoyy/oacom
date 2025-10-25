@@ -42,7 +42,7 @@ export default function Nav(props: NavProps) {
       <span>
         <a href="/"><Image src="/logo-portfolio.png" alt="" width={220} height={220} priority /></a>
       </span>
-      <ul className="md:flex md:items-center space-x-8 text-slate-600 text-xl">
+      <ul className="flex md:items-center space-x-8 text-slate-600 text-xl">
         {navItems.map(item => <NavLink key={item.href + item.label} item={item} currentPath={pathname} />)}
       </ul>
     </nav>
