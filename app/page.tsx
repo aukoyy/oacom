@@ -20,7 +20,7 @@ export default function Home() {
           />
           <div>
             <h1 className='text-4xl'>Hello!</h1>
-            <p className="text-lg">I am <a href="/about" className="link">Øyvind</a>, <br />a Solutions Architect<br />soon to be based<br />in Australia.</p>
+            <p className="text-lg">I am <a href="/about" className="link">Øyvind</a>, <br />a Cloud Engineer<br />soon to be based<br />in Australia.</p>
           </div>
         </div>
         <h2 className="text-3xl mt-24 text-gray-500">Posts</h2>
