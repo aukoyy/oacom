@@ -1,0 +1,147 @@
+---
+title: "How I set up a clean Mac"
+slug: "clean-mac"
+imagePath: "/content/clean-mac/mac-logo.png"
+date: "2024-10-28"
+excerpt: "My personal guide to setting up a clean Mac for development."
+publish: true
+---
+
+import { ExternalLink } from "@/app/components/ExternalLink";
+
+---
+
+See dotfiles for zsh at Github: <ExternalLink href="https://github.com/aukoyy/dotfiles-zsh">dotfiles-zsh</ExternalLink>
+
+
+## Terminal and config
+
+Pick a terminal. I prefer iTerm2.
+
+1. Configure iTerm2
+    1. Choose a theme under Profiles → Colors → Color Presets (can be downloaded/imported)
+    2. Disable "Show mark indicators" under Profiles → Terminal
+    3. Remove the marked areas if desired
+2. Set up oh-my-zsh
+    {/* 1. <ExternalLink href="https://ohmyz.sh/">https://ohmyz.sh/</ExternalLink> */}
+3. Set up powerlevel10k
+    1. Or try an alternative
+        1. p10k is currently on life support
+        2. <ExternalLink href="https://www.youtube.com/watch?v=9U8LCjuQzdc">YouTube</ExternalLink>
+    2. <ExternalLink href="https://github.com/romkatv/powerlevel10k">powerlevel10k</ExternalLink>
+4. Add aliases if desired
+
+### Remove animation time for dock
+
+<ExternalLink href="https://www.xda-developers.com/how-accelerate-dock-macos-terminal/#:~:text=If%20you'd%20like%20to,Hit%20Enter%20on%20your%20keyboard">Source link</ExternalLink>
+
+First, change your settings to auto hide the dock.
+
+![hide-show-doc.png](/content/clean-mac/hide-show-doc.png)
+
+```zsh
+# Remove animation
+defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
+# Remove delay
+defaults write com.apple.dock autohide-delay -float 0; killall Dock
+```
+
+### Make hidden apps appear as faded in dock
+
+```zsh
+# Faded
+defaults write com.apple.Dock showhidden -bool true; killall Dock
+# Revert
+defaults write com.apple.Dock showhidden -bool false; killall Dock
+
+```
+
+### Insert blank spaces in dock
+
+```zsh
+defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'; killall Dock
+```
+
+### Change duration that the screenshot image hangs out
+
+```zsh
+# May no longer work due to changes in macOS
+defaults write com.apple.screencaptureui "thumbnailExpiration" -float 15 && killall SystemUIServer
+```
+
+## Git & GitHub
+
+Add your computer to GitHub's SSH key list: <ExternalLink href="https://github.com/settings/keys">github settings</ExternalLink>
+
+### Configure git
+
+```zsh
+git config --global user.name "[name]"
+git config --global user.email "[email of GitHub account]"
+git config --global core.editor "vim"
+git config --list # Lists all settings
+```
+
+### Better git log
+
+Note: Oh My Zsh now has a standard alias for this. This step can be omitted.
+
+<ExternalLink href="https://coderwall.com/p/euwpig/a-better-git-log" label="https://coderwall.com/p/euwpig/a-better-git-log" />
+
+- Quick install
+    
+Enter this in the terminal:
+
+```zsh
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+Now `git lg` or `git lg -10` will display all or 10 formatted log lines
+
+To see lines that have changed: `git lg -p`
+    
+
+### **Make 'git open' open the repository in the browser**
+
+`npm install --global git-open`
+
+Use by typing `git open` in a repository.
+
+<ExternalLink href="https://www.npmjs.com/package/git-open?activeTab=readme">git-open on npm</ExternalLink>
+
+## Copy .dotfiles
+
+```zsh
+# In home folder 
+git clone git@github.com:aukoyy/dotfiles-zsh.git
+```
+
+## Brew
+
+**Install:** <ExternalLink href="https://brew.sh/">brew.sh</ExternalLink>
+
+**Bundle:** <ExternalLink href="https://docs.brew.sh/Brew-Bundle-and-Brewfile">Brew-Bundle-and-Brewfile</ExternalLink>
+
+> ‼️ Follow the instructions in the terminal to add to PATH
+
+
+Update Homebrew and packages:
+
+- Run `brew update` (may take several minutes)
+- Then run `brew upgrade`
+
+## Other Apps
+
+<ExternalLink href="https://www.bresink.com/osx/0TinkerTool/download.php">Tinker tool</ExternalLink>
+
+KeyStrokePro - displays key shortcuts while typing
+
+YouTube downloader: <ExternalLink href="https://github.com/yt-dlp/yt-dlp">yt-dlp</ExternalLink>
+
+<ExternalLink href="https://formulae.brew.sh/formula/yt-dlp#default">yt-dlp from brew</ExternalLink>
+
+Add to aliases:
+```zsh
+alias yt='yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o "~/youtube-downloads/%(uploader)s - %(title).200s [%(duration/60.0)dm].%(ext)s" '
+alias yta='yt-dlp -f bestaudio --extract-audio --audio-format mp3 -o "~/youtube-downloads/%(uploader)s - %(title).200s [%(duration/60.0)dm].%(ext)s" '
+```

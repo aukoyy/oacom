@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getAllPosts } from '@/lib/mdx';
+import Link from "next/link";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -20,7 +21,7 @@ export default function Home() {
           />
           <div>
             <h1 className='text-4xl'>Hello!</h1>
-            <p className="text-lg">I am <a href="/about" className="link">Øyvind</a>, <br />a Cloud Engineer<br />soon to be based<br />in Australia.</p>
+            <p className="text-lg">I am <Link href="/about" className="link">Øyvind</Link>, <br />a Cloud Engineer<br />soon to be based<br />in Australia.</p>
           </div>
         </div>
         <h2 className="text-3xl mt-24 text-gray-500">Posts</h2>
@@ -28,9 +29,9 @@ export default function Home() {
           {publishedPosts.map((post) => (
             <article key={post.slug} className="border-b border-gray-200 pb-6">
               <h3 className="text-xl font-bold">
-                <a href={`/posts/${post.slug}`} className="hover:text-sky-700 transition-colors">
+                <Link href={`/posts/${post.slug}`} className="hover:text-sky-700 transition-colors">
                   {post.title}
-                </a>
+                </Link>
               </h3>
               <p className="text-sm text-gray-500">Published: {post.date}</p>
               {post.excerpt && (

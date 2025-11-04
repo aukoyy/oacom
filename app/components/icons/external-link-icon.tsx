@@ -2,11 +2,11 @@
 
 import classNames from "classnames";
 
-interface ExternalLinkProps {
+interface ExternalLinkIconProps {
   className?: string;
 }
 
-export const ExternalLink = (props: ExternalLinkProps) => {
+export const ExternalLinkIcon = (props: ExternalLinkIconProps) => {
   const { className = 'w-5' } = props;
   return (
     <svg

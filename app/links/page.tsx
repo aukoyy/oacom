@@ -3,7 +3,7 @@
 import { ReactNode, useState } from "react";
 import {
   LinkedInIcon,
-  ExternalLink,
+  ExternalLinkIcon,
   EmailIcon,
   GithubIcon,
   YoutubeIcon,
@@ -19,8 +19,8 @@ interface LinkEntryProps {
 
 function ExternalLinkEntry({ icon, label, href }: LinkEntryProps) {
   return (
-    <div className="flex space-x-4 items-center">
-      <div className="p-2 bg-slate-700 rounded-full">
+    <div className="flex items-center space-x-4">
+      <div className="p-2 rounded-full bg-slate-700">
         {icon}
       </div>
       <div className="flex space-x-1 link">
@@ -28,9 +28,9 @@ function ExternalLinkEntry({ icon, label, href }: LinkEntryProps) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-lg font-semibold flex space-x-1"
+          className="flex space-x-1 text-lg font-semibold"
         >
-          <p>{label}</p><ExternalLink />
+          <p>{label}</p><ExternalLinkIcon />
         </a>
       </div>
     </div>
@@ -43,11 +43,11 @@ function ClipboardEntry({ icon, label }: { icon: ReactNode, label: string }) {
     navigator.clipboard.writeText(label);
   };
   return (
-    <div className="flex space-x-4 items-center">
-      <div className="p-2 bg-slate-700 rounded-full">
+    <div className="flex items-center space-x-4">
+      <div className="p-2 rounded-full bg-slate-700">
         {icon}
       </div>
-      <button onClick={handleClipboardClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+      <button onClick={handleClipboardClick} className="flex space-x-1 text-lg font-semibold cursor-pointer link">
         <p>{label}</p><ClipboardIcon />
       </button>
     </div>
@@ -60,16 +60,16 @@ function PhoneNumberEntry({ icon, label }: { icon: ReactNode, label: string }) {
     navigator.clipboard.writeText(label.replace(/\s/g, ''));
   };
   return (
-    <div className="flex space-x-4 items-center">
-      <div className="p-2 bg-slate-700 rounded-full">
+    <div className="flex items-center space-x-4">
+      <div className="p-2 rounded-full bg-slate-700">
         {icon}
       </div>
       {revealed ? (
-        <button onClick={handlePhoneNumberClick} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+        <button onClick={handlePhoneNumberClick} className="flex space-x-1 text-lg font-semibold cursor-pointer link">
           <p>{label}</p><ClipboardIcon />
         </button>
       ) : (
-        <button onClick={() => setRevealed(true)} className="text-lg font-semibold cursor-pointer flex space-x-1 link">
+        <button onClick={() => setRevealed(true)} className="flex space-x-1 text-lg font-semibold cursor-pointer link">
           <p>Reveal</p>
         </button>
       )}
@@ -85,31 +85,31 @@ export default function Links() {
   return (
     <div className="">
       <main className="">
-        <div className="flex space-x-8 items-center">
+        <div className="flex items-center space-x-8">
           <div>
             <h1 className="text-4xl text-slate-700">All my links</h1>
-            <div className="space-y-4 text-lg mt-8">
+            <div className="mt-8 space-y-4 text-lg">
               <ExternalLinkEntry
-                icon={<GithubIcon className="text-white w-8" />}
+                icon={<GithubIcon className="w-8 text-white" />}
                 label="GitHub"
                 href="https://github.com/aukoyy"
               />
               <ExternalLinkEntry
-                icon={<LinkedInIcon className="text-white w-8" />}
+                icon={<LinkedInIcon className="w-8 text-white" />}
                 label="LinkedIn"
                 href="https://www.linkedin.com/in/oyvindaukner/"
               />
               <ExternalLinkEntry
-                icon={<YoutubeIcon className="text-white w-8" />}
+                icon={<YoutubeIcon className="w-8 text-white" />}
                 label="Youtube"
                 href="https://www.youtube.com/@AukOps"
               />
               <ClipboardEntry
-                icon={<EmailIcon className="text-white w-8" />}
+                icon={<EmailIcon className="w-8 text-white" />}
                 label="oyvind.auk@gmail.com"
               />
               <PhoneNumberEntry
-                icon={<PhoneIcon className="text-white w-8" />}
+                icon={<PhoneIcon className="w-8 text-white" />}
                 label="+47 950 96 996"
               />
             </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export type NavItem = { label: string; href: string };
@@ -20,13 +21,11 @@ const NavLink = (props: NavLinkProps) => {
   const isCurrentPage = item.href === currentPath || (item.href !== '/' && currentPath.startsWith(item.href));
   return (
     <li className={`link-hover ${isCurrentPage ? 'link' : ''}`}>
-      <a
+      <Link
         href={item.href}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? 'noopener noreferrer' : undefined}
       >
         {item.label}
-      </a>
+      </Link>
     </li>
   );
 }
@@ -40,7 +39,7 @@ export default function Nav(props: NavProps) {
   return (
     <nav className="flex flex-col md:flex-row md:justify-around items-center">
       <span>
-        <a href="/"><Image src="/logo-portfolio.png" alt="" width={220} height={220} priority /></a>
+        <Link href="/"><Image src="/logo-portfolio.png" alt="" width={220} height={220} priority /></Link>
       </span>
       <ul className="flex md:items-center space-x-8 text-slate-600 text-xl">
         {navItems.map(item => <NavLink key={item.href + item.label} item={item} currentPath={pathname} />)}
