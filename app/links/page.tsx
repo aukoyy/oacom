@@ -85,7 +85,7 @@ export default function Links() {
   return (
     <div className="">
       <main className="">
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-8 mt-18">
           <div>
             <h1 className="text-4xl text-slate-700">All my links</h1>
             <div className="mt-8 space-y-4 text-lg">

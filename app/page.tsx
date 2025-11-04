@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="">
-      <main className="">
+      <main className="mt-18">
         <div className="flex space-x-[-35px] md:space-x-2 justify-center items-center">
           <Image
             src="/notion-avatar.svg"
@@ -24,18 +24,18 @@ export default function Home() {
             <p className="text-lg">I am <Link href="/about" className="link">Øyvind</Link>, <br />a Cloud Engineer<br />soon to be based<br />in Australia.</p>
           </div>
         </div>
-        <h2 className="text-3xl mt-24 text-gray-500">Posts</h2>
-        <div className="space-y-6 mt-6">
+        <h2 className="mt-24 text-3xl text-gray-500">Posts</h2>
+        <div className="mt-6 space-y-6">
           {publishedPosts.map((post) => (
-            <article key={post.slug} className="border-b border-gray-200 pb-6">
+            <article key={post.slug} className="pb-6 border-b border-gray-200">
               <h3 className="text-xl font-bold">
-                <Link href={`/posts/${post.slug}`} className="hover:text-sky-700 transition-colors">
+                <Link href={`/posts/${post.slug}`} className="transition-colors hover:text-sky-700">
                   {post.title}
                 </Link>
               </h3>
               <p className="text-sm text-gray-500">Published: {post.date}</p>
               {post.excerpt && (
-                <p className="text-gray-600 mt-2">{post.excerpt}</p>
+                <p className="mt-2 text-gray-600">{post.excerpt}</p>
               )}
             </article>
           ))}

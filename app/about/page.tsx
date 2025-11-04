@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-18">
       <main className="">
         <h1 className="text-4xl font-bold">About</h1>
         <div className="flex flex-col mt-12 lg:flex-row-reverse">

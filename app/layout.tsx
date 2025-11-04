@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
         )}>
         <Nav navItems={navItems} />
         <div className="flex justify-center">
-          <div className="max-w-7xl mt-18 px-4 lg:px-24">
+          <div className="px-4 max-w-7xl lg:px-24">
             {children}
           </div>
         </div>
