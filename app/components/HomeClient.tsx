@@ -48,7 +48,7 @@ export default function HomeClient({ publishedPosts }: HomeClientProps) {
           />
           <div>
             <h1 className='text-4xl'>Hello!</h1>
-            <p className="text-lg">I am <Link href="/about" className="link">Øyvind</Link>, <br />a Cloud Engineer<br />soon to be based<br />in Australia.</p>
+            <p className="text-lg">I am <Link href="/about" className="link">Øyvind</Link>, <br />a Cloud Engineer<br />based in Oslo.</p>
           </div>
         </div>
         <h2 className="mt-24 text-3xl text-gray-500">Posts</h2>
