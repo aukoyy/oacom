@@ -10,8 +10,10 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
+    "@myriaddreamin/typst.ts": "^0.7.0-rc2",
     "@next/mdx": "^16.0.0",
     "@types/mdx": "^2.0.13",
+    "antd": "^6.1.4",
     "classnames": "^2.5.1",
     "gray-matter": "^4.0.3",
     "next": "16.0.0",
