@@ -1778,11 +1778,11 @@ endobj
   /A <<
     /Type /Action
     /S /URI
-    /URI (https://oyvindaukner.com/about)
+    /URI (https://oyvindaukner.com)
   >>
   /F 4
   /StructParent 0
-  /Contents (https://oyvindaukner.com/about)
+  /Contents (https://oyvindaukner.com)
 >>
 endobj
 
@@ -1839,8 +1839,8 @@ endobj
 145 0 obj
 <<
   /Creator (Typst 0.14.0)
-  /ModDate (D:20260117193723+01'00)
-  /CreationDate (D:20260117193723+01'00)
+  /ModDate (D:20260117194536+01'00)
+  /CreationDate (D:20260117194536+01'00)
 >>
 endobj
 
@@ -1851,7 +1851,7 @@ endobj
   /Subtype /XML
 >>
 stream
-<?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="xmp-writer"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:xmp="http://ns.adobe.com/xap/1.0/"  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"  xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"  xmlns:pdf="http://ns.adobe.com/pdf/1.3/" ><xmp:CreatorTool>Typst 0.14.0</xmp:CreatorTool><dc:language><rdf:Bag><rdf:li>en</rdf:li></rdf:Bag></dc:language><xmp:ModifyDate>2026-01-17T19:37:23+01:00</xmp:ModifyDate><xmp:CreateDate>2026-01-17T19:37:23+01:00</xmp:CreateDate><xmpTPg:NPages>1</xmpTPg:NPages><dc:format>application/pdf</dc:format><xmpMM:InstanceID>hQycgyL+neqNixpzg1DcnQ==</xmpMM:InstanceID><xmpMM:DocumentID>hQycgyL+neqNixpzg1DcnQ==</xmpMM:DocumentID><xmpMM:RenditionClass>proof</xmpMM:RenditionClass><pdf:PDFVersion>1.7</pdf:PDFVersion></rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>
+<?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="xmp-writer"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:xmp="http://ns.adobe.com/xap/1.0/"  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"  xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"  xmlns:pdf="http://ns.adobe.com/pdf/1.3/" ><xmp:CreatorTool>Typst 0.14.0</xmp:CreatorTool><dc:language><rdf:Bag><rdf:li>en</rdf:li></rdf:Bag></dc:language><xmp:ModifyDate>2026-01-17T19:45:36+01:00</xmp:ModifyDate><xmp:CreateDate>2026-01-17T19:45:36+01:00</xmp:CreateDate><xmpTPg:NPages>1</xmpTPg:NPages><dc:format>application/pdf</dc:format><xmpMM:InstanceID>MXeVMk+bR9YBADOXhPTUfQ==</xmpMM:InstanceID><xmpMM:DocumentID>MXeVMk+bR9YBADOXhPTUfQ==</xmpMM:DocumentID><xmpMM:RenditionClass>proof</xmpMM:RenditionClass><pdf:PDFVersion>1.7</pdf:PDFVersion></rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>
 endstream
 endobj
 
@@ -2018,18 +2018,18 @@ xref
 0000036989 00000 n
 0000037037 00000 n
 0000037084 00000 n
-0000037358 00000 n
-0000037735 00000 n
-0000041385 00000 n
-0000041512 00000 n
-0000042598 00000 n
+0000037346 00000 n
+0000037723 00000 n
+0000041373 00000 n
+0000041500 00000 n
+0000042586 00000 n
 trailer
 <<
   /Size 148
   /Root 147 0 R
   /Info 145 0 R
-  /ID [(hQycgyL+neqNixpzg1DcnQ==) (hQycgyL+neqNixpzg1DcnQ==)]
+  /ID [(MXeVMk+bR9YBADOXhPTUfQ==) (MXeVMk+bR9YBADOXhPTUfQ==)]
 >>
 startxref
-42836
+42824
 %%EOF

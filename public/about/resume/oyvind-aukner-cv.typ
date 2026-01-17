@@ -23,7 +23,7 @@ Senior Cloud / Platform Engineer (AWS) · Norway · Open to relocation to Austra
 
 +47 950 96 996 ·
 oyvind.auk\@gmail.com ·
-#underline(text(fill: rgb("#00a6f4"), link("https://oyvindaukner.com/about")[oyvindaukner.com]))
+#underline(text(fill: rgb("#00a6f4"), link("https://oyvindaukner.com")[oyvindaukner.com]))
 // #text(fill: rgb("#6a7282"))[_Best times for calls: 7:00-9:00 AM CET (4:00-6:00 PM AEST)_]
 
 == Experience

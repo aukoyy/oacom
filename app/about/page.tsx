@@ -2,14 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from 'antd';
-import { useState } from 'react';
-import { Resume } from './resume-notused/resume';
+import { ExternalLinkIcon } from "../components/icons";
 
 export default function About() {
-  const [isGenerating, setIsGenerating] = useState(false);
 
-  const handleDownloadResume = async () => {    
+  const handleShowResume = async () => {    
     // open in new tab the cv page
     window.open('/about/resume/oyvind-aukner-cv.pdf', '_blank');
   };
@@ -63,15 +60,15 @@ export default function About() {
                 <h3 className="mt-4 text-lg">Bachelor of Informatics</h3>
                 <p>Norwegian University of Science and Technology (NTNU) <br /><span className="text-gray-500">2016 - 2019</span></p>
               </div>
+            <Link
+              href="/about/resume/oyvind-aukner-cv.pdf"
+              // onClick={handleShowResume}
+              target="_blank"
+              className="flex space-x-1 text-lg font-semibold cursor-pointer link"
+            >
+              <p>View resume</p><ExternalLinkIcon />
+            </Link>
             </section>
-              <Button 
-                type="default" 
-                onClick={handleDownloadResume}
-                loading={isGenerating}
-                disabled={isGenerating}
-              >
-                View Resume
-              </Button>
           </div>
         </div>
       </main>
