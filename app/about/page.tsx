@@ -5,19 +5,11 @@ import Link from "next/link";
 import { ExternalLinkIcon } from "../components/icons";
 
 export default function About() {
-
-  const handleShowResume = async () => {    
-    // open in new tab the cv page
-    window.open('/about/resume/oyvind-aukner-cv.pdf', '_blank');
-  };
-
   return (
     <div className="flex justify-center mt-18">
       <main className="">
         <h1 className="text-4xl font-bold">About</h1>
-        {/* <Link href="/about/resume">
-          <Button className="m-0! p-0!" type="link">View Resume</Button>
-        </Link> */}
+        
         <div className="flex flex-col mt-12 lg:flex-row-reverse">
           <div className="relative w-full h-[400px] mb-8 lg:w-[750px] lg:h-[750px] lg:mb-0 lg:ml-32">
             <Image
@@ -61,8 +53,7 @@ export default function About() {
                 <p>Norwegian University of Science and Technology (NTNU) <br /><span className="text-gray-500">2016 - 2019</span></p>
               </div>
             <Link
-              href="/about/resume/oyvind-aukner-cv.pdf"
-              // onClick={handleShowResume}
+              href="/about/oyvind-aukner-resume.pdf"
               target="_blank"
               className="flex space-x-1 text-lg font-semibold cursor-pointer link"
             >
