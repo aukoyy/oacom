@@ -4,31 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from 'antd';
 import { useState } from 'react';
-import { Resume } from './resume/resume';
+import { Resume } from './resume-notused/resume';
 
 export default function About() {
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const handleDownloadResume = async () => {
-    
-
-    try {
-      setIsGenerating(true);
-      console.log('Generating PDF resume...');
-      setTimeout(() => {
-        console.log('PDF generation simulated (timeout complete).');
-        setIsGenerating(false);
-      }, 4000);
-      // const pdfBytes = await pdfGenerator.generatePDF(Resume);
-      // downloadPDF(pdfBytes, 'Oyvind_Aukner_Resume.pdf');
-      
-      console.log('Resume downloaded successfully');
-    } catch (error) {
-      console.error('Error generating resume:', error);
-      // alert('Failed to generate resume. Please try again.');
-    } finally {
-      // setIsGenerating(false);
-    }
+  const handleDownloadResume = async () => {    
+    // open in new tab the cv page
+    window.open('/about/resume/oyvind-aukner-cv.pdf', '_blank');
   };
 
   return (
@@ -81,14 +64,14 @@ export default function About() {
                 <p>Norwegian University of Science and Technology (NTNU) <br /><span className="text-gray-500">2016 - 2019</span></p>
               </div>
             </section>
-              {/* <Button 
-                type="primary" 
+              <Button 
+                type="default" 
                 onClick={handleDownloadResume}
                 loading={isGenerating}
                 disabled={isGenerating}
               >
-                {isGenerating ? 'Generating PDF...' : 'Download Resume'}
-              </Button> */}
+                View Resume
+              </Button>
           </div>
         </div>
       </main>
