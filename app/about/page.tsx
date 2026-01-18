@@ -44,7 +44,6 @@ export default function About() {
                 <ul className="space-y-1 list-disc list-inside">
                   <li>AWS Certified Solutions Architect - Associate</li>
                   <li>AWS Certified Developer - Associate</li>
-                  <li>AWS Certified Cloud Practitioner</li>
                 </ul>
               </div>
               <div>
