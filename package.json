@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "typ": "typst watch ./public/about/oyvind-aukner-resume.typ",
     "build": "next build",
     "start": "next start"
   },
