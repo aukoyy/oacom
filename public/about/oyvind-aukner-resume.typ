@@ -28,6 +28,14 @@ oyvind.auk\@gmail.com ·
 
 == Experience
 
+/* #work(
+  title: "Senior Cloud Engineer",
+  location: "Brisbane, Australia",
+  company: "ACME inc · Awesome company",
+  dates: dates-helper(start-date: "Apr 2026", end-date: "Present"),
+)
+- Owned and evolved AWS infrastructure using CDK (TypeScript) as a central platform engineer, standardising deployments and automation across the organisation */
+
 #work(
   title: "Senior Cloud Engineer",
   location: "Oslo, Norway",
@@ -36,7 +44,7 @@ oyvind.auk\@gmail.com ·
 )
 - Owned and evolved AWS infrastructure using CDK (TypeScript) as a central platform engineer, standardising deployments and automation across the organisation
 // - Designed, launched, and managed en image mirroring solution in AWS ECR
-- Designed and operated a company-wide SFTP platform using AWS Transfer Family, supporting secure file transfers across multiple teams and external partners
+- Built and managed a secure company-wide SFTP platform using AWS Transfer Family and GuardDuty, supporting file transfers across multiple teams and external partners
 - Served as security champion and AWS community of practice lead, driving knowledge sharing initiatives on best practices and security topics
 
 #work(
