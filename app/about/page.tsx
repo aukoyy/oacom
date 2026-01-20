@@ -36,7 +36,7 @@ export default function About() {
 
               <div>
                 <h2 className="text-2xl font-light text-slate-700">Recent Work Experience</h2>
-                <h3 className="mt-4 text-lg">Cloud Engineer</h3>
+                <h3 className="mt-4 text-lg">Senior Cloud Engineer</h3>
                 <p>Fremtind Forsikring AS <br /><span className="text-gray-500">Aug 2024 - now</span></p>
               </div>
               <div>
