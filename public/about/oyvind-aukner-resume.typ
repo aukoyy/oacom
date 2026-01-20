@@ -42,7 +42,7 @@ oyvind.auk\@gmail.com ·
   company: "Fremtind Forsikring AS · National insurance provider",
   dates: dates-helper(start-date: "Aug 2024", end-date: "Present"),
 )
-- Owned and evolved AWS infrastructure using CDK (TypeScript) as a central platform engineer, standardising deployments and automation across the organisation
+- Owned and evolved AWS infrastructure using CDK (TypeScript) as a central platform engineer, standardising deployments, automation and self service workflows across the organisation
 // - Designed, launched, and managed en image mirroring solution in AWS ECR
 - Built and managed a secure company-wide SFTP platform using AWS Transfer Family and GuardDuty, supporting file transfers across multiple teams and external partners
 - Served as security champion and AWS community of practice lead, driving knowledge sharing initiatives on best practices and security topics
