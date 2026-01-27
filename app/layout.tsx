@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects' },
+  // { label: 'Projects', href: '/projects' },
   { label: 'Links', href: '/links' },
 ];
 
