@@ -12,25 +12,21 @@ import { ExternalLink } from "@/app/components/ExternalLink";
 ---
 
 
-With code like this in your workflow, you can trigger a workflow in another repository:
+With rest actions from github, you are empowered to trigger workflows in other repositories. This is especially useful for platform teams who want to provide a self-service experience for their users, and handle the provisioning and maintenance of the underlying infrastructure separately. In the following example, we will set up a workflow in `gha-example-self` that dispatches a workflow in `gha-example-infra` when triggered.
 
-```yaml
-- name: dispatch build
-  uses: actions/github-script@v7
-  with:
-    github-token: ${{ steps.app-token.outputs.token }}
-    script: |
-      console.log('Dispatching remote workflow')
-      github.rest.actions.createWorkflowDispatch({
-        owner: context.repo.owner,
-        repo: 'gha-example-infra',
-        workflow_id: 'build-infra-dev.yml',
-        ref: 'main',
-      });
+The core logic that dispatches the workflow looks like this:
 
+```yml
+script: |
+  github.rest.actions.createWorkflowDispatch({
+    owner: context.repo.owner,
+    repo: 'gha-example-infra',
+    workflow_id: 'build-infra-dev.yml',
+    ref: 'main',
+  });
 ```
 
-However we are missing the `app-token` step, which is responsible for generating a token with the necessary permissions to dispatch workflows in the target repository. To set this up, we need to create a GitHub App and generate a private key.
+However, apart from some boilerplate, we are missing the `app-token` step, which is responsible for generating a token with the necessary permissions to dispatch workflows in the target repository. To set this up, we need to create a GitHub App and generate a private key.
 
 
 ### Make a Github App
@@ -107,6 +103,9 @@ Name: APP_PRIVATE_KEY
 Value: The entire contents of your .pem file
 
 ### Bringing it all together
+
+Now we can add the app token step to our workflow and see it in action:
+
 ```yml
 name: dispatch-infra-dev
 
