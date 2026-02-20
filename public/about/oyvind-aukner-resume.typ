@@ -54,7 +54,7 @@ oyvind.auk\@gmail.com ·
   dates: dates-helper(start-date: "Jan 2024", end-date: "Aug 2024"),
 )
 - Salvaged and launched TDoc timekeeping system after previous consultancy bankruptcy//, ensuring Norwegian Road Administration compliance
-- Stabilised two React codebases and collaborated on C\# backend development and API integration
+- Stabilised two React codebases and collaborated on backend development and API integration
 // - Collaborated on backend development in C\#, refining RESTful JSON-based client-server communication to enhance system reliability
 
 #work(
