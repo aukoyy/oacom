@@ -13,6 +13,16 @@ export default function HomeClient({ publishedPosts }: HomeClientProps) {
   const clickCountRef = useRef(0);
   const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const formatDate = (dateString: string) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
   const handleImageClick = () => {
     clickCountRef.current += 1;
 
@@ -60,7 +70,7 @@ export default function HomeClient({ publishedPosts }: HomeClientProps) {
                   {post.title}
                 </Link>
               </h3>
-              <p className="text-sm text-gray-500">Published: {post.date}</p>
+              <p className="text-sm text-gray-500">{formatDate(post.date)}</p>
               {post.excerpt && (
                 <p className="mt-2 text-gray-600">{post.excerpt}</p>
               )}
