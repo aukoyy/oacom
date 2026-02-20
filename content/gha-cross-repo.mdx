@@ -1,0 +1,144 @@
+---
+title: "GitHub Actions Cross-Repo Workflow Dispatch"
+slug: "gha-cross-repo"
+imagePath: "/content/github-actions/github-actions-logo.png"
+date: "2026-02-20"
+excerpt: "My guide to setting up GitHub Actions to trigger workflows across repositories using a GitHub App for authentication."
+publish: true
+---
+
+import { ExternalLink } from "@/app/components/ExternalLink";
+
+---
+
+
+
+
+With code like this in your workflow, you can trigger a workflow in another repository:
+
+```yaml
+- name: dispatch build
+  uses: actions/github-script@v7
+  with:
+    github-token: ${{ steps.app-token.outputs.token }}
+    script: |
+      console.log('Dispatching remote workflow')
+      github.rest.actions.createWorkflowDispatch({
+        owner: context.repo.owner,
+        repo: 'gha-example-infra',
+        workflow_id: 'build-infra-dev.yml',
+        ref: 'main',
+      });
+
+```
+
+However we are missing the `app-token` step, which is responsible for generating a token with the necessary permissions to dispatch workflows in the target repository. To set this up, we need to create a GitHub App and generate a private key.
+
+
+### Make a Github App
+
+**Step 1: Create a GitHub App**
+Go to GitHub App settings:
+
+Navigate to https://github.com/settings/apps
+Or: GitHub → Settings → Developer settings → GitHub Apps
+Click "New GitHub App"
+Fill out the basic information:
+
+GitHub App name: "Workflow Dispatcher" (or any name you prefer)
+Homepage URL: https://github.com/aukoyy/gha-example-self
+
+Configure permissions:
+Under Repository permissions, set:
+
+Actions: Read and Write (to dispatch workflows)
+Contents: Read (basic access)
+Metadata: Read (required baseline permission)
+Set installation scope:
+
+Select "Only on this account"
+Or "Any account" if you need broader access
+Create the app:
+
+Click "Create GitHub App"
+
+**Step 2: Get your App ID**
+
+After creating the app:
+
+You'll see App ID on the app's settings page
+Copy this number (e.g., 123456)
+
+**Step 3: Generate a Private Key**
+
+On your app's settings page:
+
+Scroll down to "Private keys"
+Click "Generate a private key"
+A .pem file will download to your computer
+Prepare the private key:
+
+Open the .pem file in a text editor like vim or VS Code
+Copy the entire contents (including -----BEGIN RSA PRIVATE KEY----- and -----END RSA PRIVATE KEY-----)
+
+**Step 4: Install the App**
+
+Install to your repositories:
+Go to your app's settings page
+Click "Install App" in the left sidebar
+Choose your account (aukoyy)
+Select "Selected repositories" and choose:
+gha-example-self (your current repo)
+yoda-driftet-plattform-ops (the target repo)
+
+**Step 5: Add Secrets to Your Repository**
+
+Go to your repository settings:
+
+Navigate to https://github.com/aukoyy/gha-example-self/settings/secrets/actions
+Or: Your repo → Settings → Secrets and variables → Actions
+Add the secrets:
+
+Secret 1: APP_ID
+
+Name: APP_ID
+Value: The app ID number (e.g., 123456)
+Secret 2: APP_PRIVATE_KEY
+
+Name: APP_PRIVATE_KEY
+Value: The entire contents of your .pem file
+
+### Bringing it all together
+```yml
+name: dispatch-infra-dev
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  dispatch-remote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: gha-example-infra
+      - name: dispatch build
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            console.log('Dispatching remote workflow')
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: 'gha-example-infra',
+              workflow_id: 'build-infra-dev.yml',
+              ref: 'main',
+            });
+
+```
