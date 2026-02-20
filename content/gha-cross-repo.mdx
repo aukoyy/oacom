@@ -34,13 +34,13 @@ However, apart from some boilerplate, we are missing the `app-token` step, which
 **Step 1: Create a GitHub App**
 Go to GitHub App settings:
 
-Navigate to https://github.com/settings/apps
+Navigate to <ExternalLink href="https://github.com/settings/apps">GitHub App Settings</ExternalLink>
 Or: GitHub → Settings → Developer settings → GitHub Apps
 Click "New GitHub App"
 Fill out the basic information:
 
 GitHub App name: "Workflow Dispatcher" (or any name you prefer)
-Homepage URL: https://github.com/aukoyy/gha-example-self
+Homepage URL: `https://github.com/aukoyy/gha-example-self`
 
 Configure permissions:
 Under Repository permissions, set:
@@ -49,12 +49,13 @@ Actions: Read and Write (to dispatch workflows)
 Contents: Read (basic access)
 Metadata: Read (required baseline permission)
 Set installation scope:
-
 Select "Only on this account"
 Or "Any account" if you need broader access
 Create the app:
 
 Click "Create GitHub App"
+
+If prompted for a WebHook URL, notice that you can uncheck "Active" and then you will be allowed to leave it blank.
 
 **Step 2: Get your App ID**
 
@@ -89,7 +90,7 @@ gha-example-infra (the target repo)
 
 Go to your repository settings:
 
-Navigate to https://github.com/aukoyy/gha-example-self/settings/secrets/actions
+Navigate to <ExternalLink href="https://github.com/aukoyy/gha-example-self/settings/secrets/actions">Repository Secrets Settings</ExternalLink>
 Or: Your repo → Settings → Secrets and variables → Actions
 Add the secrets:
 
@@ -139,3 +140,10 @@ jobs:
             });
 
 ```
+
+### Code used in this example
+<ExternalLink href="https://github.com/aukoyy/gha-example-self">gha-example-self repository</ExternalLink>
+<br />
+<ExternalLink href="https://github.com/aukoyy/gha-example-infra">gha-example-infra repository</ExternalLink>
+
+Feel free to copy the full workflow and test it out yourself! You can trigger the workflow from the Actions tab in GitHub, and you should see it dispatch the workflow in `gha-example-infra` successfully.
