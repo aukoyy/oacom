@@ -43,7 +43,7 @@ Currently based in Australia · Eligible for employer-sponsored visa (482 / 186)
   title: "Senior Cloud Engineer",
   location: "Oslo, Norway",
   company: "Fremtind Forsikring AS · National insurance provider",
-  dates: dates-helper(start-date: "Aug 2024", end-date: "Present"),
+  dates: dates-helper(start-date: "Aug 2024", end-date: "Mar 2026"),
 )
 - Owned and evolved AWS infrastructure using CDK (TypeScript) as a central platform engineer, standardising deployments, automation and self service workflows across the organisation
 // - Designed, launched, and managed en image mirroring solution in AWS ECR
