@@ -99,11 +99,11 @@ export default function Links() {
                 label="LinkedIn"
                 href="https://www.linkedin.com/in/oyvindaukner/"
               />
-              <ExternalLinkEntry
+              {/* <ExternalLinkEntry
                 icon={<YoutubeIcon className="w-8 text-white" />}
                 label="Youtube"
                 href="https://www.youtube.com/@AukOps"
-              />
+              /> */}
               <ClipboardEntry
                 icon={<EmailIcon className="w-8 text-white" />}
                 label="oyvind.auk@gmail.com"
