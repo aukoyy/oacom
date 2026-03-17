@@ -110,7 +110,7 @@ export default function Links() {
               />
               <PhoneNumberEntry
                 icon={<PhoneIcon className="w-8 text-white" />}
-                label="+47 950 96 996"
+                label="+61 478 713 541"
               />
             </div>
           </div>
