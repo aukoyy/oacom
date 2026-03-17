@@ -19,15 +19,14 @@
 
 = Øyvind Aukner
 
-Senior Cloud / Platform Engineer (AWS) · Gold Coast, QLD · Australia
-
+Cloud / Platform Engineer (AWS) · Gold Coast, QLD · Eligible for employer-sponsored visa (482 / 186)
 
 +61 478 713 541 ·
 oyvind.auk\@gmail.com ·
 #underline(text(fill: rgb("#00a6f4"), link("https://oyvindaukner.com")[oyvindaukner.com]))
 // #text(fill: rgb("#6a7282"))[_Best times for calls: 7:00-9:00 AM CET (4:00-6:00 PM AEST)_]
 
-Currently based in Australia · Eligible for employer-sponsored visa (482 / 186)
+// Currently based in Australia · Eligible for employer-sponsored visa (482 / 186)
 
 == Experience
 
@@ -136,4 +135,4 @@ Currently based in Australia · Eligible for employer-sponsored visa (482 / 186)
 === Language Proficiency
 *English:* Professional fluency (PTE Academic, Sep 2025 · Overall score: 90)
 
-// *Norwegian:* Native
+*Norwegian:* Native
