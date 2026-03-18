@@ -99,6 +99,7 @@ export default function Links() {
                 label="LinkedIn"
                 href="https://www.linkedin.com/in/oyvindaukner/"
               />
+              
               {/* <ExternalLinkEntry
                 icon={<YoutubeIcon className="w-8 text-white" />}
                 label="Youtube"
@@ -111,6 +112,11 @@ export default function Links() {
               <PhoneNumberEntry
                 icon={<PhoneIcon className="w-8 text-white" />}
                 label="+61 478 713 541"
+              />
+              <ExternalLinkEntry
+                icon={<ExternalLinkIcon className="w-8 text-white" />}
+                label="Blinq card"
+                href="https://blinq.me/YydVSttxjYWz?bs=db"
               />
             </div>
           </div>
