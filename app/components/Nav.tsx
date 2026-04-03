@@ -39,7 +39,7 @@ export default function Nav(props: NavProps) {
   return (
     <nav className="flex flex-col md:flex-row md:justify-around items-center">
       <span>
-        <Link href="/"><Image src="/logo-portfolio.png" alt="" width={220} height={220} priority /></Link>
+        <Link href="/"><Image src="/logo-portefølge-s-ø.svg" alt="" width={220} height={220} priority /></Link>
       </span>
       <ul className="flex md:items-center space-x-8 text-slate-600 text-xl">
         {navItems.map(item => <NavLink key={item.href + item.label} item={item} currentPath={pathname} />)}
