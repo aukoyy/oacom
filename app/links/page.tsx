@@ -109,10 +109,10 @@ export default function Links() {
                 icon={<EmailIcon className="w-8 text-white" />}
                 label="oyvind.auk@gmail.com"
               />
-              <PhoneNumberEntry
+              {/* <PhoneNumberEntry
                 icon={<PhoneIcon className="w-8 text-white" />}
                 label="+61 478 713 541"
-              />
+              /> */}
               <ExternalLinkEntry
                 icon={<ExternalLinkIcon className="w-8 text-white" />}
                 label="Blinq card"
