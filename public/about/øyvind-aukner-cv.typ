@@ -20,24 +20,13 @@
 = Øyvind Aukner
 
 Cloud / Platform Engineer (AWS)
-//· Eligible for employer-sponsored visa (482 / 186)
+// Fullstack Engineer
 
 +47 950 96 996 ·
 oyvind.auk\@gmail.com ·
 #underline(text(fill: rgb("#00a6f4"), link("https://oyvindaukner.com")[oyvindaukner.com]))
-// #text(fill: rgb("#6a7282"))[_Best times for calls: 7:00-9:00 AM CET (4:00-6:00 PM AEST)_]
-
-// Currently based in Australia · Eligible for employer-sponsored visa (482 / 186)
 
 == Experience
-
-/* #work(
-  title: "Senior Cloud Engineer",
-  location: "Brisbane, Australia",
-  company: "ACME inc · Awesome company",
-  dates: dates-helper(start-date: "Apr 2026", end-date: "Present"),
-)
-- Owned and evolved AWS infrastructure using CDK (TypeScript) as a central platform engineer, standardising deployments and automation across the organisation */
 
 #work(
   title: "Senior Cloud Engineer",
