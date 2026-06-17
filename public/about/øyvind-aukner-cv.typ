@@ -19,7 +19,7 @@
 
 = Øyvind Aukner
 
-Cloud / Platform Engineer (AWS)
+// Cloud / Platform Engineer (AWS)
 // Fullstack Engineer
 
 +47 950 96 996 ·
